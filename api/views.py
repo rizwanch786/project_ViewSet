@@ -22,8 +22,7 @@ class StudentViewSet(viewsets.ViewSet):
     def retrieve(self, request, pk = None):
         if pk is not None:
             stu = Student.objects.get(id = pk)
-            serializer = StudentSerializer(stu)
-            return(serializer)
+            return StudentSerializer(stu)
     
     def update(self, request, pk = None):
         stu = Student.objects.get(id = pk)
